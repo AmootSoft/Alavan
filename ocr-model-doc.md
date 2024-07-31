@@ -3,9 +3,9 @@
 ### ساختار آدرس
 ساختار آدرس به صورت زیر می‌باشد:
 
-<p dir="ltr">
-  ``{BaseUrl}/api/model/ocr``
-</p>
+```Text
+{BaseUrl}/api/model/ocr
+```
 
 
 1 - این سرویس به صورت Post می باشد 
