@@ -3,7 +3,10 @@
 ### ساختار آدرس
 ساختار آدرس به صورت زیر می‌باشد:
 
-``{BaseUrl}/api/model/ocr``
+<p dir="ltr">
+  ``{BaseUrl}/api/model/ocr``
+</p>
+
 
 1 - این سرویس به صورت Post می باشد 
 
