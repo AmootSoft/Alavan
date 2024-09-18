@@ -16,3 +16,7 @@
 
 [مستندات وب سرویس های هوش مصنوعی](https://portal.alavan.co.ir/)
 
+### base url
+https://service.alavan.co.ir/
+
+
