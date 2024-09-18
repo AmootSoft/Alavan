@@ -4,7 +4,7 @@
 ساختار آدرس به صورت زیر می‌باشد:
 
 ```Text
-{BaseUrl}/api/model/ocr
+{BaseUrl}/api/v1/model/ocr
 ```
 
 
@@ -20,4 +20,13 @@
   "Language" : string // far , eng
 }
 
+```
+
+و در header مقدار Token دریافتی از portal را وارد کنید
+
+```bash
+curl --location 'https://service.alavan.co.ir/api/v1/model/ocr/' \
+--header 'Token: مقدار توکن دریافتی از پرتال آلاوان' \
+--form 'ImageFile=@"مسیر فایل عکس"' \
+--form 'Language="far"'
 ```
