@@ -22,7 +22,8 @@ curl --location 'https://service.alavan.co.ir/api/v1/Phishing/CreateList' \
 
 ### پارامترها:
 
-- **url**: دامنه مدنظر
+- **url**: دامنه مدنظر 
+- حتما باید از http یا https استفاده شود
 
 
 ### نکات:
@@ -81,9 +82,104 @@ curl --location 'https://service.alavan.co.ir/api/v1/Phishing/CreateList' \
 }
 ```
 
-### خطاهای احتمالی:
+---
+
+##  نحوه استفاده از لیست سیاه آلاوان
+* این سرویس به صورت get استفاده می شود
+### endpoint
+https://service.alavan.co.ir/api/v1/Phishing/GetBlackList
 
 
+### پارامترها:
+
+- **Token**: توکن دریافتی از پرتال آلاوان
+
+```bash
+curl --location 'https://service.alavan.co.ir/api/v1/Phishing/GetBlackList' \
+--header 'Token: توکن دریافتی از پرتال آلاوان'
+```
+
+### پاسخ
+```json
+{
+    "data": [
+        {
+            "url": "https://foodaneeet.com"
+        },
+        {
+            "url": "https://foodaneeeeet.com"
+        },
+        {
+            "url": "https://foodaneeeeییet.com"
+        }
+    ],
+    "result": true,
+    "message": ""
+}
+```
+---
+##  نحوه اضافه کردن به لیست سیاه آلاوان
+* این سرویس به صورت POST استفاده می شود
+### endpoint
+https://service.alavan.co.ir/api/v1/Phishing/CreateInBlackList
 
 
+### پارامترها:
 
+- **Token**: توکن دریافتی از پرتال آلاوان
+- **url**: دامنه مدنظر 
+- حتما باید از http یا https استفاده شود
+
+
+```bash
+curl --location 'https://service.alavan.co.ir/api/v1/Phishing/CreateInBlackList' \
+--header 'Token: توکن دریافتی از پرتال آلاوان' \
+--header 'Content-Type: application/json' \
+--data '{
+  "url": "http://portal.alavan.co.ir"
+}'
+```
+
+### پاسخ
+```json
+{
+    "data": {
+        "url": "http://portal.alavan.co.ir"
+    },
+    "result": true,
+    "message": "عملیات با موفقیت انجام شد"
+}
+```
+---
+##  نحوه حذف کردن از لیست سیاه آلاوان
+* این سرویس به صورت DELETE
+* 
+* استفاده می شود
+### endpoint
+https://service.alavan.co.ir/api/v1/Phishing/DeleteFromBlackList
+
+
+### پارامترها:
+
+- **Token**: توکن دریافتی از پرتال آلاوان
+- **url**: دامنه مدنظر 
+- حتما باید از http یا https استفاده شود
+
+
+```bash
+curl --location --request DELETE 'https://service.alavan.co.ir/api/v1/Phishing/DeleteFromBlackList' \
+--header 'Token: توکن دریافتی از پرتال آلاوان' \
+--header 'Content-Type: application/json' \
+--data '{
+  "url": "http://portal.alavan.co.ir"
+}'
+```
+
+### پاسخ
+```json
+{
+"data": null,
+"result": true,
+"message": "عملیات با موفقیت انجام شد"
+}
+```
