@@ -18,7 +18,7 @@ curl --location 'https://service.alavan.co.ir/api/v1/Model/TTS' \
 --header 'Content-Type: application/json' \
 --data '{
   "text": "سلام وقت بخیر",
-  "modelType": "vits_male1_best"
+  "modelType": "piper_farid"
 }'
 ```
 
@@ -33,12 +33,9 @@ curl --location 'https://service.alavan.co.ir/api/v1/Model/TTS' \
 ### نکات:
 
 1. انواع model type
-* vits_male1_best
-* vits female (best)
-* vits-male
-* vits female1
-* glowtts-male
-* glowtts-female
+* piper_ahmad
+* piper_farid
+* piper_hanieh
 
 ### پاسخ:
 
@@ -52,7 +49,7 @@ curl --location 'https://service.alavan.co.ir/api/v1/Model/TTS' \
 --header 'Content-Type: application/json' \
 --data '{
   "text": "سلام وقت بخیر",
-  "modelType": "vits_male1_best"
+  "modelType": "piper_farid"
 }'
 ```
 
