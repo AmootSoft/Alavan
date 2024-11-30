@@ -36,6 +36,8 @@ curl --location 'https://service.alavan.co.ir/api/v1/Model/TTS' \
 * piper_ahmad
 * piper_farid
 * piper_hanieh
+* piper_mozhgan
+* piper_hani
 
 ### پاسخ:
 
