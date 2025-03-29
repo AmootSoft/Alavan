@@ -12,12 +12,12 @@
 
 2 - در ورودی دو پارامتر فایل تصویر و نوع زبان را با عناوین زیر دریافت می کند
 
-3 - زبان معتبر ، زبان انگلیسی ( eng ) و زبان فارسی ( far ) است 
+3 - زبان معتبر ، زبان انگلیسی ( eng ) و زبان فارسی ( fas ) است 
 ```json
 
 {
   "ImageFile" : byte[] , 
-  "Language" : string // far , eng
+  "Language" : string // fas , eng
 }
 
 ```
@@ -28,5 +28,5 @@
 curl --location 'https://service.alavan.co.ir/api/v1/model/ocr/' \
 --header 'Token: مقدار توکن دریافتی از پرتال آلاوان' \
 --form 'ImageFile=@"مسیر فایل عکس"' \
---form 'Language="far"'
+--form 'Language="fas"'
 ```
