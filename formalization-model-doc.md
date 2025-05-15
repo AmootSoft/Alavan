@@ -1,41 +1,69 @@
-## نحوه استفاده از مدل Formalization آلاوان
-### ساختار آدرس
-ساختار آدرس به صورت زیر می‌باشد:
+# نحوه استفاده از API مدل تبدیل نوشتار محاوره‌ای به رسمی
 
-```Text
-{BaseUrl}/api/v1/Model/Formalization
-```
+این مدل برای تبدیل متون غیررسمی و محاوره‌ای به زبان رسمی طراحی شده است.
 
-1 - این سرویس به صورت Post می باشد 
+---
 
-2 - در ورودی یک پارامتر متن پیام دریافت می کند
 
-```json
-{
-  "text": "string"
-}
-```
+این سرویس به صورت **Post** می باشد:
 
-و در header مقدار Token دریافتی از portal را وارد کنید
+در هدر **Authorization**، مقدار **توکن دریافتی از پرتال آلاوان** را وارد نمایید.
+
+در ورودی **text**, یک متن پیام وارد نمایید.
+
 
 ```bash
 curl --location 'https://service.alavan.co.ir/api/v1/Model/Formalization' \
---header 'Token: توکن دریافتی از پرتال آلاوان' \
 --header 'Content-Type: application/json' \
+--header 'Authorization: توکن خود راوارد کنید' \
 --data '{
-  "text": "string"
+  "text": "متن"
 }'
 ```
 
-### نمونه پاسخ:
+```python
+import requests
 
-```json
-{
-    "data": {
-        "output_text": "این یک پیام تست است."
-    },
-    "result": true,
-    "message": "عملیات با موفقیت انجام شد"
+url = "https://service.alavan.co.ir/api/v1/Model/Formalization"
+
+headers = {
+    "Content-Type": "application/json",
+    "Authorization": "Bearer توکن خود راوارد کنید"  # Replace this with your actual token
 }
+
+data = {
+    "text": "متن" # Replace this with your actual text
+}
+
+response = requests.post(url, headers=headers, json=data)
+
+print("Status Code:", response.status_code)
+print("Response Body:", response.text)
+
 ```
 
+```javascript
+const url = "https://service.alavan.co.ir/api/v1/Model/Formalization";
+
+const headers = {
+  "Content-Type": "application/json",
+  "Authorization": "Bearer توکن خود را وارد کنید" // Replace this with your actual token
+};
+
+const body = JSON.stringify({
+  text: "متن" // Replace this with your actual text
+});
+
+fetch(url, {
+  method: "POST",
+  headers: headers,
+  body: body
+})
+  .then(response => response.json())
+  .then(data => {
+    console.log("✅ Response:", data);
+  })
+  .catch(error => {
+    console.error("❌ Error:", error);
+  });
+```
