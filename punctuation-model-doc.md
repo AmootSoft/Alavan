@@ -1,40 +1,64 @@
-## نحوه استفاده از مدل Punctuation آلاوان
-### ساختار آدرس
-ساختار آدرس به صورت زیر می‌باشد:
+# نحوه استفاده از API مدل اصلاح علائم نگارشی
 
-```Text
-{BaseUrl}/api/v1/Model/Punctuation
-```
+این مدل برای **اصلاح علائم نگارشی در متون فارسی به‌طور خودکار** طراحی شده است.
 
-1 - این سرویس به صورت Post می باشد 
+---
 
-2 - در ورودی یک پارامتر متن پیام دریافت می کند
 
-```json
-{
-  "text": "string"
-}
-```
+این سرویس به صورت **Post** می باشد.
 
-و در header مقدار Token دریافتی از portal را وارد کنید
+در قسمت **Authorization**, مقدار **توکن دریافتی از پرتال آلاوان** را وارد نمایید.
+
+در قسمت **text**, **متن پیام** خود را وارد نمایید.
+
 
 ```bash
 curl --location 'https://service.alavan.co.ir/api/v1/Model/Punctuation' \
---header 'Token: توکن دریافتی از پرتال آلاوان' \
 --header 'Content-Type: application/json' \
+--header 'Authorization: Bearer توکن دریافتی از پرتال آلاوان' \
 --data '{
-  "text": "string"
+  "text": "متن پیام"
 }'
 ```
 
-### نمونه پاسخ:
+```python
+import requests
 
-```json
-{
-    "data": {
-        "output_text": "این یک پیام تست است. "
-    },
-    "result": true,
-    "message": "عملیات با موفقیت انجام شد"
+url = "https://service.alavan.co.ir/api/v1/Model/Punctuation"
+headers = {
+    "Content-Type": "application/json",
+    "Authorization": "Bearer توکن دریافتی از پرتال آلاوان"
 }
+
+data = {
+    "text": "متن پیام"
+}
+
+response = requests.post(url, headers=headers, json=data)
+
+print("Status Code:", response.status_code)
+print("Response:", response.text)
+```
+
+```javascript
+const fetch = require("node-fetch");
+
+const url = "https://service.alavan.co.ir/api/v1/Model/Punctuation";
+const token = "Bearer توکن دریافتی از پرتال آلاوان";
+
+const body = {
+  text: "متن پیام"
+};
+
+fetch(url, {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+    "Authorization": token
+  },
+  body: JSON.stringify(body)
+})
+  .then(res => res.json())
+  .then(data => console.log("✅ Response:", data))
+  .catch(err => console.error("❌ Error:", err));
 ```
