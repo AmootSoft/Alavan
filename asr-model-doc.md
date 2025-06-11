@@ -1,67 +1,65 @@
-##  نحوه استفاده از مدل ASR آلاوان
-* این سرویس به صورت post استفاده می شود
-### endpoint
-https://service.alavan.co.ir/api/v1/Model/ASR
+# نحوه استفاده از API مدل تبدیل گفتار به نوشتار
 
-# API درخواست ASR با استفاده از cURL
+این مدل برای **تبدیل صدا به متن فارسی یا انگلیسی** طراحی شده است.
 
-این دستور `curl` برای ارسال فایل صوتی به سرویس ASR (تشخیص گفتار خودکار) استفاده می‌شود تا متن گفتار موجود در فایل صوتی استخراج شود.
+---
 
-## نحوه استفاده
 
-### درخواست:
-```markdown
+این سرویس به صورت **Post** می باشد.
 
-```bash
-curl --location 'https://service.alavan.co.ir/api/v1/Model/ASR' \
---header 'Token: توکن دریافتی از پرتال آلاوان' \
---form 'AudioFile=@"/path/to/your/audio.wav"'
-```
+در قسمت **Authorization**, مقدار **توکن دریافتی از پرتال آلاوان** را وارد نمایید.
 
-### پارامترها:
+در قسمت **AudioFile**, **مسیر فایل صوتی** خود را وارد نمایید.
 
-- **Token**: توکن احراز هویت مورد نیاز برای دسترسی به API. این توکن باید در هدر درخواست ارسال شود.
-  - مثال: `مقدار توکن دریافتی از پرتال آلاوان`
-
-- **AudioFile**: مسیر فایل صوتی که می‌خواهید پردازش شود. فایل باید در قالب‌ صوتی معتبر (WAV) ارسال شود.
-  - مثال: `@"/home/user/Downloads/audio_file.wav"`
-
-### نکات:
-
-1. مطمئن شوید که مسیر فایل صوتی به درستی مشخص شده است.
-2. توکن باید معتبر باشد تا درخواست به درستی انجام شود.
-3. فایل صوتی باید دارای کیفیت مناسب برای تشخیص گفتار باشد.
-
-### پاسخ:
-
-در صورتی که درخواست موفق باشد، سرور متن گفتاری استخراج شده از فایل صوتی را به صورت پاسخ بازمی‌گرداند.
-
-### مثال استفاده:
 
 ```bash
 curl --location 'https://service.alavan.co.ir/api/v1/Model/ASR' \
---header 'Token: مقدار توکن دریافتی از پرتال آلاوان' \
---form 'AudioFile=@"/home/a.bozorgi@Amoot.Local/Downloads/audio_YDxb14a.wav"'
+--header 'Authorization: Bearer توکن دریافتی از پرتال آلاوان' \
+--form 'AudioFile=@"مسیر فایل صوتی"'
 ```
 
-در این مثال، فایل صوتی **audio_YDxb14a.wav** برای پردازش ASR ارسال می‌شود.
+```python
+import requests
 
-### قالب‌های پشتیبانی شده:
-
-- فرمت رایج صوتی WAV پشتیبانی شده.
-  
-### نمونه پاسخ:
-
-```json
-{
-    "data": {
-        "textGenerated": "سلام وقت بخیر اینجا آموت است."
-    },
-    "result": true,
-    "message": "عملیات با موفقیت انجام شد"
+url = "https://service.alavan.co.ir/api/v1/Model/ASR"
+headers = {
+    "Authorization": "Bearer توکن دریافتی از پرتال آلاوان"
 }
+
+file_path = "مسیر فایل صوتی"
+
+with open(file_path, "rb") as audio:
+    files = {"AudioFile": ("output.wav", audio, "audio/wav")}
+    response = requests.post(url, headers=headers, files=files)
+
+print("Status Code:", response.status_code)
+print("Response:", response.text)
 ```
 
-در صورت موفقیت، پاسخ شامل وضعیت موفقیت و متن گفتار استخراج شده از فایل صوتی خواهد بود.
+```javascript
+const fetch = require("node-fetch");
+const FormData = require("form-data");
+const fs = require("fs");
 
-### خطاهای احتمالی:
+const url = "https://service.alavan.co.ir/api/v1/Model/ASR";
+const token = "Bearer توکن دریافتی از پرتال آلاوان";
+
+// Replace with the path to your converted WAV file
+const filePath = "مسیر فایل صوتی";
+
+const form = new FormData();
+form.append("AudioFile", fs.createReadStream(filePath));
+
+fetch(url, {
+  method: "POST",
+  headers: {
+    Authorization: token,
+    ...form.getHeaders()
+  },
+  body: form
+})
+  .then(res => res.text())
+  .then(data => console.log("✅ ASR Response:", data))
+  .catch(err => console.error("❌ Error:", err));
+
+```
