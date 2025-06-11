@@ -1,62 +1,69 @@
-## نحوه استفاده از مدل Sms Classification آلاوان
+# نحوه استفاده از API مدل اعتبارسنجی هوشمند پيام
 
-### ساختار آدرس
-ساختار آدرس به صورت زیر می‌باشد:
+این مدل برای **بررسی و ارزیابی هوشمند پیام‌های متنی از نظر تایید یا عدم تایید محتوا بر اساس متن و نوع خط** طراحی شده است.
 
-```Text
-{BaseUrl}/api/v2/SmsValidation/SmsClassification
-```
+---
 
-1 - این سرویس به صورت Post می باشد 
 
-2 - در ورودی دو پارامتر متن پیام و نوع خط را با عناوین زیر دریافت می کند
+این سرویس به صورت **Post** می باشد.
 
-3 - :
-- **خدماتی**
-  
-- **خط اختصاصی**
+در قسمت **Authorization**, مقدار **توکن دریافتی از پرتال آلاوان** را وارد نمایید.
 
-- **خط تبلیغاتی**
+در قسمت **text**, **متن پیام** خود را وارد نمایید.
 
-- **خط خدماتی اختصاصی**
+در قسمت **lineKind**, **نوع خط** را وارد نمایید.
 
-- **خط خدماتی عمومی**
-
-- **خط عمومی**
-
-- **خطوط ویژه**
-
-```json
-{
-  "text": "string",
-  "lineKind": "string"
-}
-```
-
-و در header مقدار Token دریافتی از portal را وارد کنید
 
 ```bash
-curl --location 'https://service.alavan.co.ir/api/v2/SmsValidation/SmsClassification' \
---header 'Token: توکن دریافتی از پرتال آلاوان' \
+curl --location 'https://service.alavan.co.ir/api/v3/SmsValidation/SmsClassification' \
 --header 'Content-Type: application/json' \
+--header 'Authorization: Bearer توکن دریافتی از پرتال آلاوان' \
 --data '{
-  "text": "string",
-  "lineKind": "خدماتی"
+  "text": "متن پیام",
+  "lineKind": "نوع خط"
 }'
 ```
 
-### نمونه پاسخ:
+```python
+import requests
 
-```json
-{
-    "data": {
-        "prediction": {
-            "status": "0",
-            "message": "تایید"
-        }
-    },
-    "result": true,
-    "message": "عملیات با موفقیت انجام شد"
+url = "https://service.alavan.co.ir/api/v3/SmsValidation/SmsClassification"
+headers = {
+    "Content-Type": "application/json",
+    "Authorization": "Bearer توکن دریافتی از پرتال آلاوان"
 }
+data = {
+    "text": "متن پیام",
+    "lineKind": "نوع خط"
+}
+
+response = requests.post(url, headers=headers, json=data)
+
+print("Status Code:", response.status_code)
+print("Response:", response.text)
+
 ```
 
+```javascript
+const fetch = require("node-fetch");
+
+const url = "https://service.alavan.co.ir/api/v3/SmsValidation/SmsClassification";
+const token = "Bearer توکن دریافتی از پرتال آلاوان";
+
+const body = {
+  text: "متن پیام",
+  lineKind: "نوع خط"
+};
+
+fetch(url, {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+    "Authorization": token
+  },
+  body: JSON.stringify(body)
+})
+  .then(res => res.json())
+  .then(data => console.log("✅ Response:", data))
+  .catch(err => console.error("❌ Error:", err));
+```
