@@ -1,64 +1,40 @@
-# نحوه استفاده از API مدل اصلاح املا و اشتباهات تایپی
+## نحوه استفاده از مدل Punctuation آلاوان
+### ساختار آدرس
+ساختار آدرس به صورت زیر می‌باشد:
 
-این مدل برای **شناسایی و اصلاح خودکار اشتباهات املایی، فاصله‌گذاری و تایپ نادرست در متون فارسی** طراحی شده است.
+```Text
+{BaseUrl}/api/v1/Model/Punctuation
+```
 
----
+1 - این سرویس به صورت Post می باشد 
 
+2 - در ورودی یک پارامتر متن پیام دریافت می کند
 
-این سرویس به صورت **Post** می باشد.
+```json
+{
+  "text": "string"
+}
+```
 
-در قسمت **Authorization**, مقدار **توکن دریافتی از پرتال آلاوان** را وارد نمایید.
-
-در قسمت **text**, **متن پیام** خود را وارد نمایید.
-
+و در header مقدار Token دریافتی از portal را وارد کنید
 
 ```bash
 curl --location 'https://service.alavan.co.ir/api/v1/Model/Punctuation' \
+--header 'Token: توکن دریافتی از پرتال آلاوان' \
 --header 'Content-Type: application/json' \
---header 'Authorization: Bearer توکن دریافتی از پرتال آلاوان' \
 --data '{
-  "text": "متن پیام"
+  "text": "string"
 }'
 ```
 
-```python
-import requests
+### نمونه پاسخ:
 
-url = "https://service.alavan.co.ir/api/v1/Model/Punctuation"
-headers = {
-    "Content-Type": "application/json",
-    "Authorization": "Bearer توکن دریافتی از پرتال آلاوان"
+```json
+{
+    "data": {
+        "output_text": "این یک پیام تست است. "
+    },
+    "result": true,
+    "message": "عملیات با موفقیت انجام شد"
 }
-
-data = {
-    "text": "متن پیام"
-}
-
-response = requests.post(url, headers=headers, json=data)
-
-print("Status Code:", response.status_code)
-print("Response:", response.text)
-```
-
-```javascript
-const fetch = require("node-fetch");
-
-const url = "https://service.alavan.co.ir/api/v1/Model/Punctuation";
-const token = "Bearer توکن دریافتی از پرتال آلاوان";
-
-const body = {
-  text: "متن پیام"
-};
-
-fetch(url, {
-  method: "POST",
-  headers: {
-    "Content-Type": "application/json",
-    "Authorization": token
-  },
-  body: JSON.stringify(body)
-})
-  .then(res => res.json())
-  .then(data => console.log("✅ Response:", data))
-  .catch(err => console.error("❌ Error:", err));
 ```
