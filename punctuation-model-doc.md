@@ -13,7 +13,7 @@
 
 
 ```bash
-curl --location 'https://service.alavan.co.ir/api/v1/Model/Punctuation' \
+curl --location 'https://service.alavan.co.ir/api/v3/Model/Punctuation' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer توکن دریافتی از پرتال آلاوان' \
 --data '{
@@ -24,7 +24,7 @@ curl --location 'https://service.alavan.co.ir/api/v1/Model/Punctuation' \
 ```python
 import requests
 
-url = "https://service.alavan.co.ir/api/v1/Model/Punctuation"
+url = "https://service.alavan.co.ir/api/v3/Model/Punctuation"
 headers = {
     "Content-Type": "application/json",
     "Authorization": "Bearer توکن دریافتی از پرتال آلاوان"
@@ -43,7 +43,7 @@ print("Response:", response.text)
 ```javascript
 const fetch = require("node-fetch");
 
-const url = "https://service.alavan.co.ir/api/v1/Model/Punctuation";
+const url = "https://service.alavan.co.ir/api/v3/Model/Punctuation";
 const token = "Bearer توکن دریافتی از پرتال آلاوان";
 
 const body = {
