@@ -13,7 +13,7 @@
 
 
 ```bash
-curl --location 'https://service.alavan.co.ir/api/v1/Phishing/CreateList' \
+curl --location 'https://service.alavan.co.ir/api/v3/Phishing/CreateList' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: توکن دریافتی از پرتال آلاوان' \
 --data '{
@@ -24,7 +24,7 @@ curl --location 'https://service.alavan.co.ir/api/v1/Phishing/CreateList' \
 ```python
 import requests
 
-url = "https://service.alavan.co.ir/api/v1/Phishing/CreateList"
+url = "https://service.alavan.co.ir/api/v3/Phishing/CreateList"
 headers = {
     "Content-Type": "application/json",
     "Authorization": "Bearer توکن دریافتی از پرتال آلاوان"
@@ -43,7 +43,7 @@ print("Response:", response.text)
 ```javascript
 const fetch = require("node-fetch");
 
-const url = "https://service.alavan.co.ir/api/v1/Phishing/CreateList";
+const url = "https://service.alavan.co.ir/api/v3/Phishing/CreateList";
 const token = "Bearer توکن دریافتی از پرتال آلاوان";
 
 const body = {
