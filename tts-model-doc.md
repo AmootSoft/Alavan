@@ -16,26 +16,27 @@
 
 گوینده ها:
 ---
-piper_ahmad
+ahmad
 
-piper_farid
+farid
 
-piper_hanieh
+hanieh
 
-piper_mozhgan
+mozhgan
 
-piper_hani
+hani
 
-piper_raha
+raha
 
-piper_nima
+nima
 
-گوینده های پیشنهادی:
-piper_nima
+### گوینده های پیشنهادی:
 
-piper_ahmad
+nima
 
-piper_raha
+ahmad
+
+raha
 
 
 ```bash
