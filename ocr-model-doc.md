@@ -17,7 +17,7 @@
 
 
 ```bash
-curl --location 'https://service.alavan.co.ir/api/v1/model/ocr' \
+curl --location 'https://service.alavan.co.ir/api/v3/model/ocr' \
 --header 'Authorization: Bearer توکن دریافتی از پرتال آلاوان' \
 --form 'ImageFile=@"مسیر فایل تصویر"' \
 --form 'Language="fa"'
@@ -33,7 +33,7 @@ file_path = r"مسیر فایل عکس"
 if not os.path.exists(file_path):
     print("File does not exist:", file_path)
 else:
-    url = "https://service.alavan.co.ir/api/v1/model/ocr"
+    url = "https://service.alavan.co.ir/api/v3/model/ocr"
     headers = {
         "Authorization": "Bearer توکن خود راوارد کنید"
     }
@@ -60,7 +60,7 @@ const form = new FormData();
 form.append("ImageFile", fs.createReadStream("مسیر فایل عکس"));
 form.append("Language", "en"); // "fa" / "en" زبان متن داخل تصویر را انتخاب کنید
 
-fetch("https://service.alavan.co.ir/api/v1/model/ocr", {
+fetch("https://service.alavan.co.ir/api/v3/model/ocr", {
   method: "POST",
   headers: {
     "Authorization": "Bearer توکن خود را وارد کنید"
