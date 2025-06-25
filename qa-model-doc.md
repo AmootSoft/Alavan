@@ -15,7 +15,7 @@
 
 
 ```bash
-curl --location 'https://service.alavan.co.ir/api/v1/Model/QA' \
+curl --location 'https://service.alavan.co.ir/api/v3/Model/QA' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer توکن دریافتی از پرتال آلاوان' \
 --data '{
@@ -27,7 +27,7 @@ curl --location 'https://service.alavan.co.ir/api/v1/Model/QA' \
 ```python
 import requests
 
-url = "https://service.alavan.co.ir/api/v1/Model/QA"
+url = "https://service.alavan.co.ir/api/v3/Model/QA"
 headers = {
     "Content-Type": "application/json",
     "Authorization": "Bearer توکن دریافتی از پرتال آلاوان"
@@ -44,7 +44,7 @@ print("Response:", response.json())
 ```
 
 ```javascript
-const url = "https://service.alavan.co.ir/api/v1/Model/QA";
+const url = "https://service.alavan.co.ir/api/v3/Model/QA";
 
 const headers = {
   "Content-Type": "application/json",
