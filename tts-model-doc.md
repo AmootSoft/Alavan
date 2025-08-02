@@ -30,6 +30,8 @@ raha
 
 nima
 
+setare
+
 ### گوینده های پیشنهادی:
 
 nima
@@ -37,6 +39,8 @@ nima
 ahmad
 
 raha
+
+setare
 
 
 ```bash
