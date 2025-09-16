@@ -31,4 +31,10 @@
 ### base url
 https://service.alavan.co.ir/
 
+## Website 
+https://alavan.co.ir
+
+## Portal
+https://portal.alavan.co.ir
+
 
