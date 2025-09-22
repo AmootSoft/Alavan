@@ -26,11 +26,8 @@ setare
 
 ### گوینده های پیشنهادی:
 
-nima
 
 ahmad
-
-raha
 
 setare
 
