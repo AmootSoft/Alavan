@@ -18,14 +18,6 @@
 ---
 ahmad
 
-farid
-
-hanieh
-
-mozhgan
-
-hani
-
 raha
 
 nima
