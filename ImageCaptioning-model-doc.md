@@ -15,7 +15,7 @@
 زبان های معتبر **فارسی** (با مقدار **true**) و **انگلیسی** (با مقدار **false**) مشخص میشود.
 
 ```bash
-curl --location 'https://service.alavan.co.ir/api/v3/Model/ImageCaptioning' \
+curl --location 'https://service.alavan.co.ir/api/v1/Model/ImageCaptioning' \
 --header 'Authorization: Bearer توکن دریافتی از پرتال آلاوان' \
 --form 'ImageFile=@"مسیر فایل تصویر"'\
 --form 'DoTranslate=true'
@@ -30,7 +30,7 @@ file_path = r"مسیر فایل تصویر"
 if not os.path.exists(file_path):
     print("File does not exist:", file_path)
 else:
-    url = "https://service.alavan.co.ir/api/v3/Model/ImageCaptioning"
+    url = "https://service.alavan.co.ir/api/v1/Model/ImageCaptioning"
     headers = {
         "Authorization": "Bearer توکن دریافتی از پرتال آلاوان"
     }
@@ -54,7 +54,7 @@ import fetch from 'node-fetch';
 import FormData from 'form-data';
 import fs from 'fs';
 
-const url = 'https://service.alavan.co.ir/api/v3/Model/ImageCaptioning';
+const url = 'https://service.alavan.co.ir/api/v1/Model/ImageCaptioning';
 const token = 'توکن دریافتی از پرتال آلاوان';
 const imagePath = 'مسیر فایل تصویر';
 
@@ -73,4 +73,5 @@ fetch(url, {
 .then(res => res.text())
 .then(text => console.log(text))
 .catch(err => console.error('Error:', err));
+
 ```
