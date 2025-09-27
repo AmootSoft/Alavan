@@ -24,7 +24,7 @@ curl --location 'https://service.alavan.co.ir/api/v1/Model/AnonymizeNames' \
 ```python
 import requests
 
-url = "https://service.alavan.co.ir/api/v3/Model/AnonymizeNames"
+url = "https://service.alavan.co.ir/api/v1/Model/AnonymizeNames"
 headers = {
     "Content-Type": "application/json",
     "Authorization": "Bearer توکن دریافتی از پرتال آلاوان"
@@ -40,7 +40,7 @@ print(response.text)
 ```
 
 ```javascript
-const url = "https://service.alavan.co.ir/api/v3/Model/AnonymizeNames";
+const url = "https://service.alavan.co.ir/api/v1/Model/AnonymizeNames";
 
 const headers = {
   "Content-Type": "application/json",
@@ -65,3 +65,4 @@ fetch(url, {
   });
 
 ```
+
