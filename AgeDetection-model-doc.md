@@ -13,7 +13,7 @@
 
 
 ```bash
-curl --location 'https://service.alavan.co.ir/api/v3/model/AgeDetection' \
+curl --location 'https://service.alavan.co.ir/api/v1/model/AgeDetection' \
 --header 'Authorization: Bearer توکن دریافتی از پرتال آلاوان' \
 --form 'ImageFile=@"مسیر فایل تصویر"'
 ```
@@ -64,3 +64,4 @@ fetch("https://service.alavan.co.ir/api/v3/model/AgeDetection", {
   .catch(err => console.error("Error:", err));
 
 ```
+
