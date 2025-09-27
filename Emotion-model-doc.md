@@ -13,7 +13,7 @@
 
 
 ```bash
-curl --location 'https://service.alavan.co.ir/api/v3/Model/Emotion' \
+curl --location 'https://service.alavan.co.ir/api/v1/Model/Emotion' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer توکن دریافتی از پرتال آلاوان' \
 --data '{
@@ -24,7 +24,7 @@ curl --location 'https://service.alavan.co.ir/api/v3/Model/Emotion' \
 ```python
 import requests
 
-url = "https://service.alavan.co.ir/api/v3/Model/Emotion"
+url = "https://service.alavan.co.ir/api/v1/Model/Emotion"
 headers = {
     "Content-Type": "application/json",
     "Authorization": "Bearer توکن دریافتی از پرتال آلاوان"
@@ -40,7 +40,7 @@ print(response.text)
 ```
 
 ```javascript
-const url = "https://service.alavan.co.ir/api/v3/Model/Emotion";
+const url = "https://service.alavan.co.ir/api/v1/Model/Emotion";
 
 const headers = {
   "Content-Type": "application/json",
@@ -63,4 +63,5 @@ fetch(url, {
   .catch(error => {
     console.error("❌ Error:", error);
   });
+
 ```
