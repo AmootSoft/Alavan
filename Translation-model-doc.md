@@ -43,7 +43,7 @@
 ---
     
 ```bash
-curl --location 'https://service.alavan.co.ir/api/v3/Model/Translation' \
+curl --location 'https://service.alavan.co.ir/api/v1/Model/Translation' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer توکن دریافتی از پرتال آلاوان' \
 --data '{
@@ -56,7 +56,7 @@ curl --location 'https://service.alavan.co.ir/api/v3/Model/Translation' \
 ```python
 import requests
 
-url = "https://service.alavan.co.ir/api/v3/Model/Translation"
+url = "https://service.alavan.co.ir/api/v1/Model/Translation"
 headers = {
     "Content-Type": "application/json",
     "Authorization": "Bearer توکن دریافتی از پرتال آلاوان"
@@ -74,7 +74,7 @@ print(response.text)
 ```
 
 ```javascript
-const url = "https://service.alavan.co.ir/api/v3/Model/Translation";
+const url = "https://service.alavan.co.ir/api/v1/Model/Translation";
 
 const headers = {
   "Content-Type": "application/json",
@@ -99,4 +99,5 @@ fetch(url, {
   .catch(error => {
     console.error("❌ Error:", error);
   });
+
 ```
