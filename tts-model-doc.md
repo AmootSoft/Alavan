@@ -33,7 +33,7 @@ setare
 
 
 ```bash
-curl --location 'https://service.alavan.co.ir/api/v3/Model/TTS' \
+curl --location 'https://service.alavan.co.ir/api/v1/Model/TTS' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer توکن دریافتی از پرتال آلاوان' \
 --data '{
@@ -45,7 +45,7 @@ curl --location 'https://service.alavan.co.ir/api/v3/Model/TTS' \
 ```python
 import requests
 
-url = "https://service.alavan.co.ir/api/v3/Model/TTS"
+url = "https://service.alavan.co.ir/api/v1/Model/TTS"
 headers = {
     "Content-Type": "application/json",
     "Authorization": "Bearer توکن دریافتی از پرتال آلاوان"
@@ -64,7 +64,7 @@ print(response.text)
 ```
 
 ```javascript
-const url = "https://service.alavan.co.ir/api/v3/Model/TTS";
+const url = "https://service.alavan.co.ir/api/v1/Model/TTS";
 
 const headers = {
   "Content-Type": "application/json",
