@@ -13,7 +13,7 @@
 
 
 ```bash
-curl --location 'https://service.alavan.co.ir/api/v3/Model/AnonymizeNames' \
+curl --location 'https://service.alavan.co.ir/api/v1/Model/AnonymizeNames' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer توکن دریافتی از پرتال آلاوان' \
 --data '{
@@ -63,4 +63,5 @@ fetch(url, {
   .catch(error => {
     console.error("❌ Error:", error);
   });
+
 ```
