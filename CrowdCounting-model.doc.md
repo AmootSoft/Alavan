@@ -12,7 +12,7 @@
 
 
 ```bash
-curl --location 'https://service.alavan.co.ir/api/v3/model/CrowdCounting' \
+curl --location 'https://service.alavan.co.ir/api/v1/model/CrowdCounting' \
 --header 'Authorization: Bearer توکن دریافتی از پرتال آلاوان' \
 --form 'ImageFile=@"مسیر فایل تصویر"'
 ```
@@ -50,7 +50,7 @@ const fs = require("fs");
 const form = new FormData();
 form.append("ImageFile", fs.createReadStream("مسیر فایل تصویر"));
 
-fetch("https://service.alavan.co.ir/api/v3/model/CrowdCounting", {
+fetch("https://service.alavan.co.ir/api/v1/model/CrowdCounting", {
   method: "POST",
   headers: {
     "Authorization": "Bearer توکن دریافتی از پرتال آلاوان",
@@ -63,4 +63,5 @@ fetch("https://service.alavan.co.ir/api/v3/model/CrowdCounting", {
   .catch(err => console.error("Error:", err));
 
 ```
+
 
