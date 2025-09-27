@@ -27,7 +27,7 @@ file_path = r"مسیر فایل تصویر"
 if not os.path.exists(file_path):
     print("File does not exist:", file_path)
 else:
-    url = "https://service.alavan.co.ir/api/v3/model/AgeDetection"
+    url = "https://service.alavan.co.ir/api/v1/model/AgeDetection"
     headers = {
         "Authorization": "Bearer توکن دریافتی از پرتال آلاوان"
     }
@@ -51,7 +51,7 @@ const fs = require("fs");
 const form = new FormData();
 form.append("ImageFile", fs.createReadStream("مسیر فایل تصویر"));
 
-fetch("https://service.alavan.co.ir/api/v3/model/AgeDetection", {
+fetch("https://service.alavan.co.ir/api/v1/model/AgeDetection", {
   method: "POST",
   headers: {
     "Authorization": "Bearer توکن دریافتی از پرتال آلاوان",
@@ -64,4 +64,5 @@ fetch("https://service.alavan.co.ir/api/v3/model/AgeDetection", {
   .catch(err => console.error("Error:", err));
 
 ```
+
 
