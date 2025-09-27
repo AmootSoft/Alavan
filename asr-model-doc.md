@@ -13,7 +13,7 @@
 
 
 ```bash
-curl --location 'https://service.alavan.co.ir/api/v3/Model/ASR' \
+curl --location 'https://service.alavan.co.ir/api/v1/Model/ASR' \
 --header 'Authorization: Bearer توکن دریافتی از پرتال آلاوان' \
 --form 'AudioFile=@"مسیر فایل صوتی"'
 ```
@@ -21,7 +21,7 @@ curl --location 'https://service.alavan.co.ir/api/v3/Model/ASR' \
 ```python
 import requests
 
-url = "https://service.alavan.co.ir/api/v3/Model/ASR"
+url = "https://service.alavan.co.ir/api/v1/Model/ASR"
 headers = {
     "Authorization": "Bearer توکن دریافتی از پرتال آلاوان"
 }
@@ -41,7 +41,7 @@ const fetch = require("node-fetch");
 const FormData = require("form-data");
 const fs = require("fs");
 
-const url = "https://service.alavan.co.ir/api/v3/Model/ASR";
+const url = "https://service.alavan.co.ir/api/v1/Model/ASR";
 const token = "Bearer توکن دریافتی از پرتال آلاوان";
 
 // Replace with the path to your converted WAV file
