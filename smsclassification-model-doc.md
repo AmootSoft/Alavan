@@ -15,7 +15,7 @@
 
 
 ```bash
-curl --location 'https://service.alavan.co.ir/api/v3/SmsValidation/SmsClassification' \
+curl --location 'https://service.alavan.co.ir/api/v1/SmsValidation/SmsClassification' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer توکن دریافتی از پرتال آلاوان' \
 --data '{
@@ -27,7 +27,7 @@ curl --location 'https://service.alavan.co.ir/api/v3/SmsValidation/SmsClassifica
 ```python
 import requests
 
-url = "https://service.alavan.co.ir/api/v3/SmsValidation/SmsClassification"
+url = "https://service.alavan.co.ir/api/v1/SmsValidation/SmsClassification"
 headers = {
     "Content-Type": "application/json",
     "Authorization": "Bearer توکن دریافتی از پرتال آلاوان"
@@ -47,7 +47,7 @@ print("Response:", response.text)
 ```javascript
 const fetch = require("node-fetch");
 
-const url = "https://service.alavan.co.ir/api/v3/SmsValidation/SmsClassification";
+const url = "https://service.alavan.co.ir/api/v1/SmsValidation/SmsClassification";
 const token = "Bearer توکن دریافتی از پرتال آلاوان";
 
 const body = {
