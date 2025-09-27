@@ -26,7 +26,7 @@ file_path = r"مسیر فایل تصویر"
 if not os.path.exists(file_path):
     print("File does not exist:", file_path)
 else:
-    url = "https://service.alavan.co.ir/api/v3/model/CrowdCounting"
+    url = "https://service.alavan.co.ir/api/v1/model/CrowdCounting"
     headers = {
         "Authorization": "Bearer توکن دریافتی از پرتال آلاوان"
     }
@@ -63,3 +63,4 @@ fetch("https://service.alavan.co.ir/api/v3/model/CrowdCounting", {
   .catch(err => console.error("Error:", err));
 
 ```
+
