@@ -1,0 +1,118 @@
+# نحوه استفاده از API مدل تبدیل نوشتار به گفتار (TTS-V2)
+
+این مدل برای تبدیل متن فارسی یا انگلیسی به صدای طبیعی و روان طراحی شده است. در نسخه‌ی دوم (TTS-V2)، دیگر نیازی به انتخاب گوینده نیست و شما می‌توانید با ارسال فایل صوتی (voice reference)، همان صدا را برای تبدیل متن به گفتار استفاده کنید. اگر فایل صوتی ارسال نشود، سیستم به‌طور پیش‌فرض از صدای گوینده پیش‌فرض برای تولید گفتار استفاده خواهد کرد.
+
+---
+
+## نوع درخواست:
+این سرویس به صورت **POST** می‌باشد.
+
+## مقدار Authorization:
+در قسمت **Authorization**، مقدار **توکن دریافتی از پرتال آلاوان** را وارد نمایید.
+
+---
+
+## ورودی‌ها:
+
+1. **Text**:  
+   متن پیام که باید به گفتار تبدیل شود.
+
+2. **VoiceReference**:  
+   فایل صوتی (مثلاً `IFormFile`) که به عنوان رفرنس برای صدای گوینده استفاده می‌شود. اگر این فیلد ارسال نشود، سیستم از صدای پیش‌فرض استفاده می‌کند.
+
+3. **Preset**:  
+   پیش‌تنظیم انتخاب شده برای تنظیمات صدا. اگر مقدار `preset` برابر با `custom` باشد، باید مقادیر تنظیمات صوتی مانند `exaggeration`, `cfg_weight`, `temperature`, `repetition_penalty`, `min_p`, و `top_p` را ارسال کنید. در غیر این صورت، نیازی به ارسال این مقادیر نیست.
+
+---
+
+## نمونه‌های کد برای استفاده از API:
+
+### 1. با استفاده از cURL:
+
+```bash
+curl --location 'https://your-tts-api-url' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer توکن دریافتی از پرتال آلاوان' \
+--data '{
+  "text": "متن",
+  "voiceReference": "file-upload",
+  "preset": "custom",
+  "exaggeration": 0.3,
+  "cfgWeight": 0.7,
+  "temperature": 0.5,
+  "repetitionPenalty": 1.5,
+  "minP": 0.05,
+  "topP": 0.8
+}'
+```
+
+```python
+import requests
+
+url = "https://your-tts-api-url"
+headers = {
+    "Content-Type": "application/json",
+    "Authorization": "Bearer توکن دریافتی از پرتال آلاوان"
+}
+data = {
+    "text": "متن",
+    "hubUuid": "unique-hub-id",
+    "voiceReference": "file-upload",  # فایل صوتی یا صدا
+    "preset": "custom",
+    "exaggeration": 0.3,
+    "cfgWeight": 0.7,
+    "temperature": 0.5,
+    "repetitionPenalty": 1.5,
+    "minP": 0.05,
+    "topP": 0.8
+}
+
+response = requests.post(url, headers=headers, json=data)
+
+print(response.status_code)
+print(response.text)
+```
+
+
+```javascript
+const url = "https://your-tts-api-url";
+
+const headers = {
+  "Content-Type": "application/json",
+  "Authorization": "Bearer توکن دریافتی از پرتال آلاوان"
+};
+
+const body = JSON.stringify({
+  text: "متن",
+  hubUuid: "unique-hub-id",
+  voiceReference: "file-upload",  // فایل صوتی یا صدا
+  preset: "custom",
+  exaggeration: 0.3,
+  cfgWeight: 0.7,
+  temperature: 0.5,
+  repetitionPenalty: 1.5,
+  minP: 0.05,
+  topP: 0.8
+});
+
+fetch(url, {
+  method: "POST",
+  headers: headers,
+  body: body
+})
+  .then(response => response.json())
+  .then(data => {
+    console.log("✅ TTS Response:", data);
+
+    // If response contains a URL to audio, play it
+    if (data.url) {
+      const audio = new Audio(data.url);
+      audio.play();
+    } else {
+      console.warn("⚠️ No audio URL in response.");
+    }
+  })
+  .catch(error => {
+    console.error("❌ Error:", error);
+  });
+```
