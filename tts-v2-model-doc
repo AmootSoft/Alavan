@@ -1,0 +1,135 @@
+# API مستند تبدیل متن به گفتار (TTS-V2)
+
+مدل TTS-V2 برای تبدیل متن فارسی و انگلیسی به گفتار طبیعی طراحی شده است.  
+در این نسخه، می‌توانید یک فایل صوتی به‌عنوان **Voice Reference** ارسال کنید تا مدل صدای خود شما را تقلید کند.  
+اگر فایل ارسال نشود، مدل از صدای پیش‌فرض استفاده می‌کند.
+
+---
+
+## 🧪 نوع درخواست
+
+**POST multipart/form-data**
+
+---
+
+## 🔐 احراز هویت
+
+در هدر درخواست وارد کنید:
+
+
+---
+
+## 📥 پارامترهای ورودی
+
+| نام فیلد | توضیح | وضعیت |
+|---------|-------|--------|
+| `text` | متن ورودی | اجباری |
+| `VoiceReference` | فایل صوتی رفرنس (mp3, wav, ogg, m4a) | اختیاری |
+| `Preset` | نوع تنظیمات صدا | اجباری |
+| `Exaggeration` | شدت بیان | اختیاری |
+| `CfgWeight` | وزن CFG | اختیاری |
+| `Temperature` | دمای مدل | اختیاری |
+| `RepetitionPenalty` | جلوگیری از تکرار | اختیاری |
+| `MinP` | حداقل احتمال | اختیاری |
+| `TopP` | کنترل sampling | اختیاری |
+
+### 🎚 مقادیر مجاز Preset
+
+- `1` → Custom  
+- `2` → News  
+- `3` → Story  
+- `4` → Neutral  
+
+اگر مقدار `Preset = Custom` باشد، پارامترهای تنظیم صدا باید ارسال شوند.
+
+---
+
+# 🌀 نمونه درخواست cURL (درست و تمیز + کامنت داخلی)
+
+```bash
+curl --request POST \
+  --url 'https://stage.service.alavan.co.ir/api/v1/Model/tts_v2' \
+  --header 'Authorization: Bearer  توکن دریافتی از پرتال آلاوان' \
+  --header 'Content-Type: multipart/form-data' \
+  --form 'text=متن تست' \
+  --form 'VoiceReference=@/path/to/voice-reference.mp3' \
+  --form 'Preset=news' \
+  --form 'Exaggeration=0.5' \
+  --form 'CfgWeight=1.2' \
+  --form 'Temperature=0.8' \
+  --form 'RepetitionPenalty=1.1' \
+  --form 'MinP=0.05' \
+  --form 'TopP=0.9'
+
+# VoiceReference: nullable - allowed: .wav .mp3 .ogg .m4a
+# Preset values: Custom=1, News=2, Story=3, Neutral=4
+# Other params are nullable
+
+
+```python
+import requests
+
+url = "https://stage.service.alavan.co.ir/api/v1/Model/tts_v2"
+
+headers = {
+    "Authorization": "Bearer توکن دریافتی از پرتال آلاوان"
+}
+
+data = {
+    "text": "متن تست",
+    "Preset": "news",
+    "Exaggeration": 0.5,
+    "CfgWeight": 1.2,
+    "Temperature": 0.8,
+    "RepetitionPenalty": 1.1,
+    "MinP": 0.05,
+    "TopP": 0.9,
+}
+
+files = {
+    "VoiceReference": open("voice-reference.mp3", "rb")  # optional
+}
+
+response = requests.post(url, headers=headers, data=data, files=files)
+
+print(response.status_code)
+print(response.text)
+
+```
+
+```javascript
+const url = "https://stage.service.alavan.co.ir/api/v1/Model/tts_v2";
+
+async function callTtsApi(voiceFile) {
+  const formData = new FormData();
+
+  formData.append("text", "متن تست");
+  formData.append("Preset", "news");
+  formData.append("Exaggeration", "0.5");
+  formData.append("CfgWeight", "1.2");
+  formData.append("Temperature", "0.8");
+  formData.append("RepetitionPenalty", "1.1");
+  formData.append("MinP", "0.05");
+  formData.append("TopP", "0.9");
+
+  if (voiceFile) {
+    formData.append("VoiceReference", voiceFile);
+  }
+
+  const response = await fetch(url, {
+    method: "POST",
+    headers: {
+      "Authorization": "Bearer <TOKEN_FROM_ALAVAN_PORTAL>"
+      // Content-Type را اضافه نکنید، مرورگر خودش تنظیم می‌کند
+    },
+    body: formData
+  });
+
+  const data = await response.json();
+  console.log("TTS Response:", data);
+
+  if (data.url) {
+    new Audio(data.url).play();
+  }
+}
+```
