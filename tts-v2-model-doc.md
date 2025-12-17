@@ -48,7 +48,7 @@
 
 ```bash
 curl --request POST \
-  --url 'https://stage.service.alavan.co.ir/api/v1/Model/tts_v2' \
+  --url 'https://service.alavan.co.ir/api/v1/Model/tts_v2' \
   --header 'Authorization: Bearer  توکن دریافتی از پرتال آلاوان' \
   --header 'Content-Type: multipart/form-data' \
   --form 'text=متن تست' \
@@ -71,7 +71,7 @@ curl --request POST \
 ```python
 import requests
 
-url = "https://stage.service.alavan.co.ir/api/v1/Model/tts_v2"
+url = "https://service.alavan.co.ir/api/v1/Model/tts_v2"
 
 headers = {
     "Authorization": "Bearer توکن دریافتی از پرتال آلاوان"
@@ -100,7 +100,7 @@ print(response.text)
 ```
 
 ```javascript
-const url = "https://stage.service.alavan.co.ir/api/v1/Model/tts_v2";
+const url = "https://service.alavan.co.ir/api/v1/Model/tts_v2";
 
 async function callTtsApi(voiceFile) {
   const formData = new FormData();
