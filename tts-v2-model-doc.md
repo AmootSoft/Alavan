@@ -19,21 +19,64 @@
 
 ---
 
-## 📥 پارامترهای ورودی
-
-| نام فیلد | توضیح | وضعیت |
-|---------|-------|--------|
-| `text` | متن ورودی | اجباری |
-| `VoiceReference` | فایل صوتی رفرنس (mp3, wav, ogg, m4a) | اختیاری |
-| `Preset` | نوع تنظیمات صدا | اجباری |
-| `Exaggeration` | شدت بیان | اختیاری |
-| `CfgWeight` | وزن CFG | اختیاری |
-| `Temperature` | دمای مدل | اختیاری |
-| `RepetitionPenalty` | جلوگیری از تکرار | اختیاری |
-| `MinP` | حداقل احتمال | اختیاری |
-| `TopP` | کنترل sampling | اختیاری |
-
-### 🎚 مقادیر مجاز Preset
+## 📥 پارامترهای ورود
+| نام فیلد | توضیح | وضعیت <table style="width:100%; background-color: #f4f4f4; border: 1px solid #ddd; border-collapse: collapse;">
+  <thead>
+    <tr>
+      <th style="background-color: #2c3e50; color: white; padding: 10px;">نام فیلد</th>
+      <th style="background-color: #2c3e50; color: white; padding: 10px;">توضیح</th>
+      <th style="background-color: #2c3e50; color: white; padding: 10px;">وضعیت</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="background-color: #34495e; color: white; padding: 8px;">text</td>
+      <td style="background-color: #34495e; color: white; padding: 8px;">متن ورودی</td>
+      <td style="background-color: #34495e; color: white; padding: 8px;">اجباری</td>
+    </tr>
+    <tr>
+      <td style="background-color: #34495e; color: white; padding: 8px;">VoiceReference</td>
+      <td style="background-color: #34495e; color: white; padding: 8px;">فایل صوتی رفرنس (mp3, wav, ogg, m4a)</td>
+      <td style="background-color: #34495e; color: white; padding: 8px;">اختیاری</td>
+    </tr>
+    <tr>
+      <td style="background-color: #34495e; color: white; padding: 8px;">Preset</td>
+      <td style="background-color: #34495e; color: white; padding: 8px;">نوع تنظیمات صدا</td>
+      <td style="background-color: #34495e; color: white; padding: 8px;">اجباری</td>
+    </tr>
+    <tr>
+      <td style="background-color: #34495e; color: white; padding: 8px;">Exaggeration</td>
+      <td style="background-color: #34495e; color: white; padding: 8px;">شدت بیان</td>
+      <td style="background-color: #34495e; color: white; padding: 8px;">اختیاری</td>
+    </tr>
+    <tr>
+      <td style="background-color: #34495e; color: white; padding: 8px;">CfgWeight</td>
+      <td style="background-color: #34495e; color: white; padding: 8px;">وزن CFG</td>
+      <td style="background-color: #34495e; color: white; padding: 8px;">اختیاری</td>
+    </tr>
+    <tr>
+      <td style="background-color: #34495e; color: white; padding: 8px;">Temperature</td>
+      <td style="background-color: #34495e; color: white; padding: 8px;">دمای مدل</td>
+      <td style="background-color: #34495e; color: white; padding: 8px;">اختیاری</td>
+    </tr>
+    <tr>
+      <td style="background-color: #34495e; color: white; padding: 8px;">RepetitionPenalty</td>
+      <td style="background-color: #34495e; color: white; padding: 8px;">جلوگیری از تکرار</td>
+      <td style="background-color: #34495e; color: white; padding: 8px;">اختیاری</td>
+    </tr>
+    <tr>
+      <td style="background-color: #34495e; color: white; padding: 8px;">MinP</td>
+      <td style="background-color: #34495e; color: white; padding: 8px;">حداقل احتمال</td>
+      <td style="background-color: #34495e; color: white; padding: 8px;">اختیاری</td>
+    </tr>
+    <tr>
+      <td style="background-color: #34495e; color: white; padding: 8px;">TopP</td>
+      <td style="background-color: #34495e; color: white; padding: 8px;">کنترل sampling</td>
+      <td style="background-color: #34495e; color: white; padding: 8px;">اختیاری</td>
+    </tr>
+  </tbody>
+</table>
+Preset
 
 - `1` → Custom  
 - `2` → News  
