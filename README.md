@@ -10,11 +10,11 @@
 
 ## راهنما 
 
- [وب سایت آلاوان](https://alavan.co.ir/)
+ [وب سایت آلاوان](https://alavan.ai/)
  
-[پرتال آلاوان](https://portal.alavan.co.ir/)
+[پرتال آلاوان](https://portal.alavan.ai/)
 
-[مستندات وب سرویس های هوش مصنوعی](https://portal.alavan.co.ir/)
+[مستندات وب سرویس های هوش مصنوعی](https://portal.alavan.ai/)
 
 [مستندات وب سرویس phishing](https://github.com/AmootSoft/Alavan/blob/main/phishing-model-doc.md)
 
@@ -29,13 +29,13 @@
 [مستندات وب سرویس Amoot Ai ](https://github.com/AmootSoft/Alavan/blob/main/amootai-model-doc.md)
 
 ### base url
-https://service.alavan.co.ir/
+https://service.alavan.ai/
 
 ## وبسایت آلاوان
-https://alavan.co.ir
+https://alavan.ai
 
 ## پرتال آلاوان
-https://portal.alavan.co.ir
+https://portal.alavan.ai
 
 ## لیست دیتاست های فارسی آلاوان
 
