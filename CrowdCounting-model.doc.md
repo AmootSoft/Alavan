@@ -12,7 +12,7 @@
 
 
 ```bash
-curl --location 'https://service.alavan.co.ir/api/v1/model/CrowdCounting' \
+curl --location 'https://service.alavan.ai/api/v1/model/CrowdCounting' \
 --header 'Authorization: Bearer توکن دریافتی از پرتال آلاوان' \
 --form 'ImageFile=@"مسیر فایل تصویر"'
 ```
@@ -26,7 +26,7 @@ file_path = r"مسیر فایل تصویر"
 if not os.path.exists(file_path):
     print("File does not exist:", file_path)
 else:
-    url = "https://service.alavan.co.ir/api/v1/model/CrowdCounting"
+    url = "https://service.alavan.ai/api/v1/model/CrowdCounting"
     headers = {
         "Authorization": "Bearer توکن دریافتی از پرتال آلاوان"
     }
@@ -50,7 +50,7 @@ const fs = require("fs");
 const form = new FormData();
 form.append("ImageFile", fs.createReadStream("مسیر فایل تصویر"));
 
-fetch("https://service.alavan.co.ir/api/v1/model/CrowdCounting", {
+fetch("https://service.alavan.ai/api/v1/model/CrowdCounting", {
   method: "POST",
   headers: {
     "Authorization": "Bearer توکن دریافتی از پرتال آلاوان",
@@ -63,5 +63,6 @@ fetch("https://service.alavan.co.ir/api/v1/model/CrowdCounting", {
   .catch(err => console.error("Error:", err));
 
 ```
+
 
 
