@@ -17,7 +17,7 @@
 
 off, low, medium, high
 ```bash
-curl --location 'https://service.alavan.co.ir/api/v1/LLM/Run
+curl --location 'https://service.alavan.ai/api/v1/LLM/Run
 --header 'Authorization: Bearer توکن دریافتی از پرتال آلاوان' \
 --data '{
   "promptId": آیدی دریافتی از پرتال آلاوان,
@@ -29,7 +29,7 @@ curl --location 'https://service.alavan.co.ir/api/v1/LLM/Run
 ```python
 import requests
 
-url = "https://service.alavan.co.ir/api/v1/LLM/Run"
+url = "https://service.alavan.ai/api/v1/LLM/Run"
 headers = {
     "Authorization": "Bearer توکن دریافتی از پرتال آلاوان",
     "Content-Type": "application/json"
@@ -49,7 +49,7 @@ print("Response:", response.json())
 ```
 
 ```javascript
-const url = "https://service.alavan.co.ir/api/v1/LLM/Run";
+const url = "https://service.alavan.ai/api/v1/LLM/Run";
 const token = "توکن_دریافتی_از_پرتال_آلاوان";
 
 const data = {
