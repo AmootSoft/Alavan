@@ -13,7 +13,7 @@
 
 
 ```bash
-curl --location 'https://service.alavan.co.ir/api/v1/Model/AnonymizeNames' \
+curl --location 'https://service.alavan.ai/api/v1/Model/AnonymizeNames' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer توکن دریافتی از پرتال آلاوان' \
 --data '{
@@ -24,7 +24,7 @@ curl --location 'https://service.alavan.co.ir/api/v1/Model/AnonymizeNames' \
 ```python
 import requests
 
-url = "https://service.alavan.co.ir/api/v1/Model/AnonymizeNames"
+url = "https://service.alavan.ai/api/v1/Model/AnonymizeNames"
 headers = {
     "Content-Type": "application/json",
     "Authorization": "Bearer توکن دریافتی از پرتال آلاوان"
@@ -40,7 +40,7 @@ print(response.text)
 ```
 
 ```javascript
-const url = "https://service.alavan.co.ir/api/v1/Model/AnonymizeNames";
+const url = "https://service.alavan.ai/api/v1/Model/AnonymizeNames";
 
 const headers = {
   "Content-Type": "application/json",
@@ -65,4 +65,5 @@ fetch(url, {
   });
 
 ```
+
 
