@@ -13,7 +13,7 @@
 
 
 ```bash
-curl --location 'https://service.alavan.co.ir/api/v1/Model/Lemmatizer' \
+curl --location 'https://service.alavan.ai/api/v1/Model/Lemmatizer' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer توکن دریافتی از پرتال آلاوان' \
 --data '{
@@ -24,7 +24,7 @@ curl --location 'https://service.alavan.co.ir/api/v1/Model/Lemmatizer' \
 ```python
 import requests
 
-url = "https://service.alavan.co.ir/api/v1/Model/Lemmatizer"
+url = "https://service.alavan.ai/api/v1/Model/Lemmatizer"
 headers = {
     "Content-Type": "application/json",
     "Authorization": "Bearer توکن دریافتی از پرتال آلاوان"
@@ -40,7 +40,7 @@ print(response.text)
 ```
 
 ```javascript
-const url = "https://service.alavan.co.ir/api/v1/Model/Lemmatizer";
+const url = "https://service.alavan.ai/api/v1/Model/Lemmatizer";
 
 const headers = {
   "Content-Type": "application/json",
@@ -65,3 +65,4 @@ fetch(url, {
   });
 
 ```
+
