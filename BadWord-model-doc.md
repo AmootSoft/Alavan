@@ -51,7 +51,7 @@ Authorization : Bearer  توکن دریافتی از پرتال آلاوان
 
 ```bash
 curl --request POST \
-  --url 'https://service.alavan.co.ir/api/v1/Model/BadWord' \
+  --url 'https://service.alavan.ai/api/v1/Model/BadWord' \
   --header 'Authorization: Bearer AlavanToken' \
   --header 'Content-Type: application/json' \
   --header 'accept: */*' \
@@ -63,7 +63,7 @@ curl --request POST \
 ```python
 import requests
 
-url = "https://service.alavan.co.ir/api/v1/Model/BadWord"
+url = "https://service.alavan.ai/api/v1/Model/BadWord"
 
 headers = {
     "Authorization": "Bearer AlavanToken",
@@ -83,7 +83,7 @@ print(response.text)
 
 
 ```javascript
-const url = "https://service.alavan.co.ir/api/v1/Model/BadWord";
+const url = "https://service.alavan.ai/api/v1/Model/BadWord";
 
 async function callBadWordApi(text) {
   const response = await fetch(url, {
