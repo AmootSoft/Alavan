@@ -14,7 +14,7 @@
 
 
 ```bash
-curl --location 'https://service.alavan.co.ir/api/v1/Rag/Ask
+curl --location 'https://service.alavan.ai/api/v1/Rag/Ask
 --header 'Authorization: Bearer توکن دریافتی از پرتال آلاوان' \
 --data '{
   "ducumentId": آیدی دریافتی از پرتال آلاوان,
@@ -25,7 +25,7 @@ curl --location 'https://service.alavan.co.ir/api/v1/Rag/Ask
 ```python
 import requests
 
-url = "https://service.alavan.co.ir/api/v1/Rag/Ask"
+url = "https://service.alavan.ai/api/v1/Rag/Ask"
 headers = {
     "Authorization": "Bearer توکن دریافتی از پرتال آلاوان",
     "Content-Type": "application/json"
@@ -44,7 +44,7 @@ print("Response:", response.json())
 ```
 
 ```javascript
-const url = "https://service.alavan.co.ir/api/v1/Rag/Ask";
+const url = "https://service.alavan.ai/api/v1/Rag/Ask";
 const token = "توکن_دریافتی_از_پرتال_آلاوان";
 
 const data = {
@@ -65,3 +65,4 @@ fetch(url, {
 .catch(error => console.error("Error:", error));
 
 ```
+
